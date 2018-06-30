@@ -1,0 +1,9 @@
+New-VM -Name VM1 -MemoryStartupBytes 256MB -BootDevice VHD -NewVHDPath D:\Parth_Work\VMWare\VM1\VM1.vhdx -Path .\VMData -NewVHDSizeBytes 1GB -Generation 1 -Switch ExternalSwitch
+
+Add-VMDvdDrive -VMName VM_Name -Path iso_File_Path
+
+Add-VMDvdDrive -VMName vm2 -Path D:\Parth_Work\VMWare\OS\Windows10_64x.iso
+
+
+vm | Out-File c:\test.txt
+//copy output of command

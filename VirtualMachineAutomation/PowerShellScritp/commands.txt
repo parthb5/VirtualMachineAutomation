@@ -1,0 +1,15 @@
+*************************Remove
+Stop-VM $VMName
+Remove-VM $VMName
+Remove-Item -Path $Path
+**************************Update
+Stop-VM $VMName
+Set-VM -StaticMemory -Name $VMName -MemoryStartupBytes $RAM
+Start-VM $VMName
+*****************************************get detail of VM
+Get-VM | Where State -eq ‘Running’ | 
+select VMName, MemoryAssigned | 
+ConvertTo-Json | 
+Out-File C:\Users\parth\Desktop\PowerShellScritp\BindUpdateList.json
+*************************************************************************************************************
+Get-VM | select Name | ConvertTo-Json | Out-File C:\Users\parth\Desktop\PowerShellScritp\BindList.json
